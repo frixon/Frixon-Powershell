@@ -1,0 +1,1 @@
+﻿Get-ExchangeServerPlus | % {"Name`t: $($_.Name)"; "Version`t: $($_.Version)"; "Edition`t: $($_.Edition)"; "Build`t: $($_.Build)"; "Role`t: $($_.Role)"; "OSVer`t: $($_.OSVer)"; "OSSP`t: $($_.OSSP)"; "OSArch`t: $($_.OSArch)"; if ($_.Update) { $_ | select -ExpandProperty update | ft inst*,upd*,desc* -auto } else { [Environment]::NewLine }}
